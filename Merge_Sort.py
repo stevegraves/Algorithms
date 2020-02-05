@@ -23,15 +23,20 @@ def merge_sort(arr):
         return arr
 
     # Recursively split input
-    left = merge_sort(arr[:len(arr)//2])
-    right = merge_sort(arr[len(arr)//2:])
+    left = merge_sort(arr[:len(arr) // 2])
+    right = merge_sort(arr[len(arr) // 2:])
 
     return merge(left, right)
 
 
+def random_int_arr(size=11, u_bound=50):
+    from random import randint
+    return [randint(0, u_bound) for _ in range(size)]
 
+a = random_int_arr()
+b = random_int_arr()
 
-test = [3, 5, 7, 2, 1, 8, 6, 4]
-
-a = merge_sort(test)
+x = merge_sort(a)
+y = merge_sort(b)
 print(a)
+print(x)
