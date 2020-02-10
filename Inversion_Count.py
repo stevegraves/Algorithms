@@ -4,11 +4,11 @@ def sort_count_inv(arr):
     if n == 0 or n == 1:
         return arr, 0
     else:
-        (left, left_inv) = sort_count_inv(arr[:n // 2])
-        (right, right_inv) = sort_count_inv(arr[n // 2:])
+        (left, l_inv) = sort_count_inv(arr[:n // 2])
+        (right, r_inv) = sort_count_inv(arr[n // 2:])
         (result, split_inv) = merge_count_split_inv(left, right)
-    print(result, left_inv + right_inv + split_inv)
-    return result, left_inv + right_inv + split_inv
+    print(result, l_inv + r_inv + split_inv)
+    return result, l_inv + r_inv + split_inv
 
 
 # Input: sorted arrays C and D of length n/2 with distinct integer
@@ -33,5 +33,5 @@ def merge_count_split_inv(left, right):
     return result, inversions
 
 
-sort_count_inv([4, 3, 5, 7, 8, 1])
+sort_count_inv([4, 8, 5, 7, 3, 1])
 # merge_count_split_inv([4, 5, 6], [1, 2, 3])
