@@ -7,13 +7,16 @@ def std_mult(a, b):
               [a[1][0] * b[0][0] + a[1][1] * b[1][0], a[1][0] * b[0][1] + a[1][1] * b[1][1]]]
     return result
 
+
 def matrix_addition(a, b):
     return [[a[row][col] + b[row][col]
              for col in range(len(a[row]))] for row in range(len(a))]
 
+
 def matrix_subtraction(a, b):
     return [[a[row][col] - b[row][col]
              for col in range(len(a[row]))] for row in range(len(a))]
+
 
 def split_matrix(a):
     n = len(a)
@@ -21,8 +24,9 @@ def split_matrix(a):
     upper_left = [[a[i][j] for j in range(m)] for i in range(m)]
     upper_right = [[a[i][j] for j in range(m, n)] for i in range(m)]
     lower_left = [[a[i][j] for j in range(m)] for i in range(m, n)]
-    lower_right = [[a[i][j] for j in range(m, n)] for i in range(m,n)]
+    lower_right = [[a[i][j] for j in range(m, n)] for i in range(m, n)]
     return upper_left, upper_right, lower_left, lower_right
+
 
 def strassen(x, y):
     result = []
@@ -51,6 +55,7 @@ def strassen(x, y):
         result.append(lower_left[i] + lower_right[i])
 
     return result
+
 
 matrix_a = [[1, 2, 3, 4], [3, 4, 5, 6], [1, 2, 3, 4], [5, 6, 7, 8]]
 matrix_b = [[5, 6, 7, 8], [7, 8, 9, 10], [1, 2, 3, 4], [3, 4, 5, 6]]
